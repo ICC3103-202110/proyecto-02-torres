@@ -19,18 +19,10 @@ function getTitle() {
 function getTable(model) {
     const { name, temp, max, min } = model
     return [
-        {
-            "Name": name
-        },
-        {
-            "Temperature": temp
-        },
-        {
-            "Max": max
-        },
-        {
-            "Min": min
-        }
+        {"City": name, 
+        "Temp": temp, 
+        "Max": max, 
+        "Min": min }
     ]
 }
 
@@ -38,8 +30,22 @@ function listForm(model) {
     const { input } = model
     const message = "Select an option: "
     const choices = ["Add City", "Update City", "Delete City"]
+    return inquirer.prompt({
+        name: "input",
+        type: "list",
+        message: message,
+        default: input,
+        choices: choices
+    })
 }
 
+function view(model) {
+    return {
+        title: getTitle(),
+        table: getTable(model)
+    }
+}
 module.exports = {
-    getTitle
+    view,
+    listForm
 }
