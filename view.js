@@ -29,14 +29,34 @@ function getTable(model) {
 function listForm(model) {
     const { input } = model
     const message = "Select an option: "
+    const addCity = "Type a location to add"
+    const updateCity = "Type a location to updated"
+    const deleteCity = "Type a location  to deleted"
     const choices = ["Add City", "Update City", "Delete City"]
-    return inquirer.prompt({
-        name: "input",
-        type: "list",
-        message: message,
-        default: input,
-        choices: choices
-    })
+    return inquirer.prompt(
+        {
+            name: "input",
+            type: "list",
+            message: message,
+            default: input,
+            choices: choices
+        },{
+            name: "acInput",
+            type: "input",
+            message: addCity,
+            default: input
+        },{
+            name: "ucInput",
+            type: "input",
+            message: updateCity,
+            default: input
+        },{
+            name: "dcInput",
+            type: "input",
+            message: deleteCity,
+            default: input
+        }
+    )
 }
 
 function view(model) {

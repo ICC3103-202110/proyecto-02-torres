@@ -5,13 +5,14 @@ const FUNCTIONS = {
     "Delete City": deleteCity
 }
 
-//function addCity(input){}
-//function updateCity(){}
-//function deleteCity(){}
+//function addCity(acInput){}
+//function updateCity(ucInput){}
+//function deleteCity(dcInput){}
 
 
 
 
 function update(input, model) {
 
+    //const {} = 
 }
